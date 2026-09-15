@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusQuest — Your Campus, Your Game</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <span class="logo-icon">🎓</span>
+        <span>Campus<span>Quest</span></span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#quests">Quests</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#explore">Explore</a>
+        <a href="#achievements">Achievements</a>
+    </nav>
+
+    <div class="nav-profile">
+        <div class="mini-avatar">A</div>
+        <span id="navLevel">Explorer</span>
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            ⚡ YOUR CAMPUS. YOUR GAME.
+        </div>
+
+        <h1>
+            Turn your college life
+            <span>into an adventure.</span>
+        </h1>
+
+        <p>
+            Complete quests, challenge your friends, climb the leaderboard,
+            explore your campus and become a Campus Legend.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#quests" class="btn primary-btn">
+                Start Quest 🚀
+            </a>
+
+            <button class="btn secondary-btn" onclick="randomActivity()">
+                I'm Bored 🎲
+            </button>
+        </div>
+
+    </div>
+
+
+    <div class="hero-dashboard">
+
+        <div class="dashboard-top">
+
+            <div>
+                <p class="small-label">YOUR CAMPUS LEVEL</p>
+                <h2 id="heroLevel">Explorer</h2>
+            </div>
+
+            <div class="level-number" id="levelNumber">
+                02
+            </div>
+
+        </div>
+
+
+        <div class="xp-info">
+            <span>XP Progress</span>
+            <span id="xpText">120 / 250 XP</span>
+        </div>
+
+        <div class="xp-bar">
+            <div class="xp-fill" id="xpBar"></div>
+        </div>
+
+
+        <div class="dashboard-stats">
+
+            <div>
+                <strong id="heroXP">120</strong>
+                <span>Total XP</span>
+            </div>
+
+            <div>
+                <strong id="heroRank">#24</strong>
+                <span>Campus Rank</span>
+            </div>
+
+            <div>
+                <strong id="heroQuests">3</strong>
+                <span>Quests Done</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats-section">
+
+    <div class="stat-card">
+        <span>👨‍🎓</span>
+        <strong>1,248</strong>
+        <p>Students Playing</p>
+    </div>
+
+    <div class="stat-card">
+        <span>🔥</span>
+        <strong id="activeQuests">18</strong>
+        <p>Active Quests</p>
+    </div>
+
+    <div class="stat-card">
+        <span>🏆</span>
+        <strong>96</strong>
+        <p>Achievements</p>
+    </div>
+
+    <div class="stat-card">
+        <span>⚔️</span>
+        <strong>8</strong>
+        <p>Departments</p>
+    </div>
+
+</section>
+
+
+<!-- ================= QUESTS ================= -->
+
+<section id="quests" class="section">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-tag">TODAY'S MISSIONS</span>
+            <h2>Daily Campus Quests</h2>
+            <p>Complete challenges and earn XP.</p>
+        </div>
+
+        <div class="streak">
+            🔥 <span id="streak">3</span> day streak
+        </div>
+
+    </div>
+
+
+    <div class="quest-grid" id="questContainer">
+
+        <!-- JS generates quests -->
+
+    </div>
+
+</section>
+
+
+<!-- ================= LEADERBOARD ================= -->
+
+<section id="leaderboard" class="section dark-section">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-tag">CAMPUS COMPETITION</span>
+            <h2>Leaderboard 🏆</h2>
+            <p>Who's ruling the campus?</p>
+        </div>
+
+        <button class="filter-btn active">This Week</button>
+
+    </div>
+
+
+    <div class="leaderboard">
+
+        <div class="leader-row first">
+
+            <div class="rank gold">1</div>
+
+            <div class="avatar">RS</div>
+
+            <div class="student">
+                <strong>Rahul Sharma</strong>
+                <span>Computer Engineering</span>
+            </div>
+
+            <div class="badge">👑</div>
+
+            <strong class="leader-xp">1,890 XP</strong>
+
+        </div>
+
+
+        <div class="leader-row">
+
+            <div class="rank silver">2</div>
+
+            <div class="avatar purple">PK</div>
+
+            <div class="student">
+                <strong>Priya Kulkarni</strong>
+                <span>Information Technology</span>
+            </div>
+
+            <div class="badge">🔥</div>
+
+            <strong class="leader-xp">1,720 XP</strong>
+
+        </div>
+
+
+        <div class="leader-row">
+
+            <div class="rank bronze">3</div>
+
+            <div class="avatar orange">AM</div>
+
+            <div class="student">
+                <strong>Aditya Mahajan</strong>
+                <span>Computer Engineering</span>
+            </div>
+
+            <div class="badge">⚡</div>
+
+            <strong class="leader-xp" id="leaderboardXP">
+                1,520 XP
+            </strong>
+
+        </div>
+
+
+        <div class="leader-row">
+
+            <div class="rank">4</div>
+
+            <div class="avatar green">SK</div>
+
+            <div class="student">
+                <strong>Sneha K.</strong>
+                <span>Electronics</span>
+            </div>
+
+            <div class="badge">🎯</div>
+
+            <strong class="leader-xp">1,410 XP</strong>
+
+        </div>
+
+
+        <div class="leader-row">
+
+            <div class="rank">5</div>
+
+            <div class="avatar pink">VN</div>
+
+            <div class="student">
+                <strong>Vedant N.</strong>
+                <span>Mechanical</span>
+            </div>
+
+            <div class="badge">🚀</div>
+
+            <strong class="leader-xp">1,320 XP</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DEPARTMENT WARS ================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-tag">BATTLE OF BRANCHES</span>
+            <h2>Department Wars ⚔️</h2>
+            <p>Which department dominates the campus?</p>
+        </div>
+
+    </div>
+
+
+    <div class="department-grid">
+
+        <div class="department-card">
+
+            <div class="department-icon">💻</div>
+
+            <div class="department-info">
+                <h3>Computer Engineering</h3>
+
+                <div class="department-bar">
+                    <div style="width:82%"></div>
+                </div>
+
+                <span>8,420 XP</span>
+            </div>
+
+            <strong>#1</strong>
+
+        </div>
+
+
+        <div class="department-card">
+
+            <div class="department-icon">⚡</div>
+
+            <div class="department-info">
+                <h3>Electronics</h3>
+
+                <div class="department-bar">
+                    <div style="width:70%"></div>
+                </div>
+
+                <span>7,210 XP</span>
+            </div>
+
+            <strong>#2</strong>
+
+        </div>
+
+
+        <div class="department-card">
+
+            <div class="department-icon">⚙️</div>
+
+            <div class="department-info">
+                <h3>Mechanical</h3>
+
+                <div class="department-bar">
+                    <div style="width:58%"></div>
+                </div>
+
+                <span>6,180 XP</span>
+            </div>
+
+            <strong>#3</strong>
+
+        </div>
+
+
+        <div class="department-card">
+
+            <div class="department-icon">🏗️</div>
+
+            <div class="department-info">
+                <h3>Civil Engineering</h3>
+
+                <div class="department-bar">
+                    <div style="width:45%"></div>
+                </div>
+
+                <span>5,020 XP</span>
+            </div>
+
+            <strong>#4</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CAMPUS TRIVIA ================= -->
+
+<section class="section trivia-section">
+
+    <div class="trivia-card">
+
+        <div class="trivia-header">
+            <span class="section-tag">CAMPUS BRAIN</span>
+            <span>+50 XP</span>
+        </div>
+
+        <h2>Campus Trivia 🧠</h2>
+
+        <p id="question">
+            Which place on campus is the unofficial student headquarters?
+        </p>
+
+
+        <div class="answers" id="answers">
+
+            <button onclick="checkAnswer(this, false)">
+                Library
+            </button>
+
+            <button onclick="checkAnswer(this, true)">
+                Canteen
+            </button>
+
+            <button onclick="checkAnswer(this, false)">
+                Principal Office
+            </button>
+
+            <button onclick="checkAnswer(this, false)">
+                Parking
+            </button>
+
+        </div>
+
+        <p class="trivia-result" id="triviaResult"></p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPLORE CAMPUS ================= -->
+
+<section id="explore" class="section">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-tag">DISCOVER</span>
+            <h2>Explore Your Campus 🗺️</h2>
+            <p>Every location has a story.</p>
+        </div>
+
+    </div>
+
+
+    <div class="map-container">
+
+        <div class="campus-map">
+
+            <div class="map-road road-one"></div>
+            <div class="map-road road-two"></div>
+
+            <button class="map-location location-one"
+                    onclick="showLocation('Main Building')">
+                🏫
+                <span>Main Building</span>
+            </button>
+
+            <button class="map-location location-two"
+                    onclick="showLocation('Canteen')">
+                🍔
+                <span>Canteen</span>
+            </button>
+
+            <button class="map-location location-three"
+                    onclick="showLocation('Library')">
+                📚
+                <span>Library</span>
+            </button>
+
+            <button class="map-location location-four"
+                    onclick="showLocation('Sports Ground')">
+                ⚽
+                <span>Sports Ground</span>
+            </button>
+
+            <button class="map-location location-five"
+                    onclick="showLocation('Computer Lab')">
+                💻
+                <span>Computer Lab</span>
+            </button>
+
+        </div>
+
+
+        <div class="location-info" id="locationInfo">
+
+            <span class="section-tag">SELECT A LOCATION</span>
+
+            <h3>Explore the campus</h3>
+
+            <p>
+                Click any location on the map to discover
+                campus facts, challenges and secrets.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ACHIEVEMENTS ================= -->
+
+<section id="achievements" class="section dark-section">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-tag">YOUR COLLECTION</span>
+            <h2>Achievements 🏅</h2>
+            <p>Unlock badges by playing CampusQuest.</p>
+        </div>
+
+    </div>
+
+
+    <div class="achievement-grid">
+
+        <div class="achievement unlocked">
+            <div class="achievement-icon">🚀</div>
+            <h3>First Quest</h3>
+            <p>Complete your first campus quest.</p>
+            <span>UNLOCKED</span>
+        </div>
+
+
+        <div class="achievement unlocked">
+            <div class="achievement-icon">🧠</div>
+            <h3>Quiz Master</h3>
+            <p>Answer 5 trivia questions correctly.</p>
+            <span>UNLOCKED</span>
+        </div>
+
+
+        <div class="achievement locked">
+            <div class="achievement-icon">🗺️</div>
+            <h3>Explorer</h3>
+            <p>Discover every campus location.</p>
+            <span>LOCKED</span>
+        </div>
+
+
+        <div class="achievement locked">
+            <div class="achievement-icon">👑</div>
+            <h3>Campus Legend</h3>
+            <p>Reach Level 10.</p>
+            <span>LOCKED</span>
+        </div>
+
+
+        <div class="achievement locked">
+            <div class="achievement-icon">🔥</div>
+            <h3>Streak Master</h3>
+            <p>Maintain a 7 day streak.</p>
+            <span>LOCKED</span>
+        </div>
+
+
+        <div class="achievement locked">
+            <div class="achievement-icon">⚔️</div>
+            <h3>Department Hero</h3>
+            <p>Earn 1,000 XP for your department.</p>
+            <span>LOCKED</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CAMPUS MEMES ================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-tag">ONLY STUDENTS KNOW</span>
+            <h2>Campus Memes 😂</h2>
+            <p>The jokes that make no sense outside campus.</p>
+        </div>
+
+    </div>
+
+
+    <div class="meme-grid">
+
+        <div class="meme-card">
+
+            <div class="meme-image">📚</div>
+
+            <h3>"I'll start studying tomorrow."</h3>
+
+            <div class="meme-reactions">
+                <button onclick="reactMeme(this)">😂 <span>128</span></button>
+                <button onclick="reactMeme(this)">💀 <span>94</span></button>
+                <button onclick="reactMeme(this)">🔥 <span>72</span></button>
+            </div>
+
+        </div>
+
+
+        <div class="meme-card">
+
+            <div class="meme-image">☕</div>
+
+            <h3>"Bro, canteen at 4?"</h3>
+
+            <div class="meme-reactions">
+                <button onclick="reactMeme(this)">😂 <span>156</span></button>
+                <button onclick="reactMeme(this)">❤️ <span>81</span></button>
+                <button onclick="reactMeme(this)">🔥 <span>63</span></button>
+            </div>
+
+        </div>
+
+
+        <div class="meme-card">
+
+            <div class="meme-image">💻</div>
+
+            <h3>"Works on my machine."</h3>
+
+            <div class="meme-reactions">
+                <button onclick="reactMeme(this)">😂 <span>201</span></button>
+                <button onclick="reactMeme(this)">💀 <span>132</span></button>
+                <button onclick="reactMeme(this)">🔥 <span>89</span></button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MYSTERY MODE ================= -->
+
+<section class="section mystery-section">
+
+    <div class="mystery-content">
+
+        <span class="section-tag">COMING THIS WEEK</span>
+
+        <h2>🔐 Campus Mystery</h2>
+
+        <p>
+            A mysterious note has appeared somewhere on campus.
+            Solve clues, explore locations and uncover the secret.
+        </p>
+
+        <button class="btn primary-btn" onclick="startMystery()">
+            Enter Mystery Mode
+        </button>
+
+    </div>
+
+    <div class="mystery-icon">
+        🔎
+    </div>
+
+</section>
+
+
+<!-- ================= WRAPPED ================= -->
+
+<section class="section">
+
+    <div class="wrapped-card">
+
+        <div>
+
+            <span class="section-tag">YOUR CAMPUS WRAPPED</span>
+
+            <h2>Your Campus Journey 🎉</h2>
+
+            <p>
+                See how much of CampusQuest you've conquered.
+            </p>
+
+        </div>
+
+
+        <div class="wrapped-stats">
+
+            <div>
+                <strong id="wrappedXP">120</strong>
+                <span>XP Earned</span>
+            </div>
+
+            <div>
+                <strong id="wrappedQuests">3</strong>
+                <span>Quests</span>
+            </div>
+
+            <div>
+                <strong>67%</strong>
+                <span>Campus Explored</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= TOAST ================= -->
+
+<div id="toast" class="toast">
+    +50 XP 🎉
+</div>
+
+
+<!-- ================= MODAL ================= -->
+
+<div class="modal-overlay" id="modal">
+
+    <div class="modal">
+
+        <button class="close-modal" onclick="closeModal()">×</button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div class="logo">
+        🎓 Campus<span>Quest</span>
+    </div>
+
+    <p>
+        Built for students. Powered by campus energy. ⚡
+    </p>
+
+    <p class="copyright">
+        © 2026 CampusQuest
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
